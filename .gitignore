@@ -1,0 +1,12 @@
+
+.gitignore
+.idea/.gitignore
+.idea/Test_Blog.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+db.sqlite3
+manage.py
+templates/
+venv/
