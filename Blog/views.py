@@ -1,5 +1,5 @@
 from rest_framework.generics import get_object_or_404
-from .models import Posts
+from .models import Blog
 from .serializers import BlogSerializer, BlogCreateSerializer, BlogEditSerializer
 from rest_framework import viewsets, generics
 from rest_framework.authentication import TokenAuthentication
@@ -8,7 +8,7 @@ from .permissions import IsBlogOwner
 
 
 class BlogView(viewsets.ModelViewSet):
-    queryset = Posts.objects.all()
+    queryset = Blog.objects.all()
     serializer_class = BlogSerializer
     lookup_field = 'pk'
 
@@ -28,7 +28,7 @@ class BlogCreateView(generics.CreateAPIView):
 
 class BlogEditView(generics.UpdateAPIView):
     lookup_field = 'pk'
-    queryset = Posts.objects.all()
+    queryset = Blog.objects.all()
     serializer_class = BlogEditSerializer
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, IsBlogOwner)

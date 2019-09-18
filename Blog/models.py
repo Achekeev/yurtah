@@ -1,6 +1,5 @@
 from django.db import models
 from Users.models import User
-from Posts.models import Posts
 
 
 class Blog(models.Model):
@@ -12,5 +11,5 @@ class Blog(models.Model):
         verbose_name_plural = 'Blogs'
 
     def __str__(self):
-        return self.blog
+        return self.post
 # Create your models here.
